@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        background-image: url("background.jpg");
+        background-size: cover;
+    }
+    #ghost {
+        width: 400px;
+        height: 500px;
+    }
+    #cat {
+        width: 200px;
+        height: 200px;
+        position: absolute; 
+        left: 500px;
+        bottom: 100px;
+    }
+
+    #witch {
+        width: 300px;
+        height: 300px;
+        position: absolute; 
+        left: 600px;
+        top: 50px;
+        
+    }
+   
+</style>
+
+<script>
+function showImage(imageSrc,imageId, soundId) {
+    document.getElementById(imageId).src=imageSrc;
+    
+    var sound = document.getElementById(soundId);
+    sound.play();
+}
+
+function playSound(soundId){
+    var sound = document.getElementById(soundId);
+    sound.play();
+}
+</script>
+
+</head>
+
+<body>
+    <audio id="catSound" src="cat.mp3"></audio>
+    <audio id="ghostSound" src="ghost.mp3"></audio>
+    <audio id="witchSound" src="witch.mp3"></audio>
+    
+    <img id="ghost"  onclick="showImage('ghost.png','ghost', 'ghostSound')">
+    <img id="cat"  onclick="showImage('cat-removebg-preview.png','cat', 'catSound')">
+    <img id="witch" onclick="showImage('witch.png','witch', 'witchSound')">
+
+</body>
+</html>
